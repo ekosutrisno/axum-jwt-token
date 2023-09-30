@@ -1,0 +1,43 @@
+# Script
+
+```bash
+curl \
+  -d "client_id=01HBJTA700P44QGB9SX6RD5S2N" \
+  -d "client_secret=8ri3Jc37M88fML5ndEOH1wLClnEjybyE" \
+  -d "username=admin" \
+  -d "password=admin" \
+  -d "grant_type=password" \
+  "http://localhost:8080/realms/master/protocol/openid-connect/token" | jq
+
+curl \
+  -d "client_id=01HBJTA700P44QGB9SX6RD5S2N" \
+  -d "client_secret=8ri3Jc37M88fML5ndEOH1wLClnEjybyE" \
+  -d "username=01hbjtqathempb49fsqceqnv6a" \
+  -d "password=01HBJTT21K5TSMC9AQ2ZYMD186" \
+  -d "grant_type=password" \
+  "http://localhost:8080/realms/master/protocol/openid-connect/token" | jq
+```
+
+```bash
+curl \
+  -d "client_id=01HBJTA700P44QGB9SX6RD5S2N" \
+  -d "client_secret=8ri3Jc37M88fML5ndEOH1wLClnEjybyE" \
+  -d "grant_type=client_credentials" \
+  "http://localhost:8080/realms/master/protocol/openid-connect/token" | jq
+```
+
+## Example Response
+
+```json
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJTQlRjSkd1TnJqNDc0MGpHZ2hpaEV5Qk1IYm8zV0VyUXA4VzA5R0RMOU1NIn0.eyJleHAiOjE2OTYwNDQ2MDksImlhdCI6MTY5NjA0NDU0OSwianRpIjoiYmVjM2FjNjctZjBhZS00MDUwLWJiOTUtMjNjOGVlN2I5YmQ1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9tYXN0ZXIiLCJhdWQiOlsibWFzdGVyLXJlYWxtIiwiYWNjb3VudCJdLCJzdWIiOiJjYTI0N2E1ZS01NWUzLTQ5ZjYtODg2Zi1hZmIzMzgxMTY3MDEiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJleG8iLCJzZXNzaW9uX3N0YXRlIjoiMGFhYWI5OGEtMzM5YS00YWQ2LTkwMDEtN2UxZjNmZTJiODU5IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiY3JlYXRlLXJlYWxtIiwiZGVmYXVsdC1yb2xlcy1tYXN0ZXIiLCJvZmZsaW5lX2FjY2VzcyIsImFkbWluIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJtYXN0ZXItcmVhbG0iOnsicm9sZXMiOlsidmlldy1pZGVudGl0eS1wcm92aWRlcnMiLCJ2aWV3LXJlYWxtIiwibWFuYWdlLWlkZW50aXR5LXByb3ZpZGVycyIsImltcGVyc29uYXRpb24iLCJjcmVhdGUtY2xpZW50IiwibWFuYWdlLXVzZXJzIiwicXVlcnktcmVhbG1zIiwidmlldy1hdXRob3JpemF0aW9uIiwicXVlcnktY2xpZW50cyIsInF1ZXJ5LXVzZXJzIiwibWFuYWdlLWV2ZW50cyIsIm1hbmFnZS1yZWFsbSIsInZpZXctZXZlbnRzIiwidmlldy11c2VycyIsInZpZXctY2xpZW50cyIsIm1hbmFnZS1hdXRob3JpemF0aW9uIiwibWFuYWdlLWNsaWVudHMiLCJxdWVyeS1ncm91cHMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjBhYWFiOThhLTMzOWEtNGFkNi05MDAxLTdlMWYzZmUyYjg1OSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4ifQ.lne2EVNoDpioU7lXgBs7C3EZbnO-Hlw3lb1u1haigllIWYFuXElluA6W5pygr3IPvJpAVrG-EYeC2cRTgbct1Gi5xZkq6p5AtxA1nMiKpstE3jmTSfDP6eVGiEuJiJfGH2a9DtQSUZPvZj_t7UUoL5Gd0UoYW3D047tuWrxoAoKkirSlT5dudJdV48eWbbwDmbpRytE3sPFjKl5k-5NQKK4vnFsFxkZsTipCSrZyoHQ9PWbD_KO-Hch6rpbuFtfSo4-p0GHk-TgC9a_MVn1RpASscmmPBDJRVSF60zc8NjE53GBYguZamtDRW_7-SL3N0kpKYCZzJNwFBSJhTMNGQQ",
+  "expires_in": 60,
+  "refresh_expires_in": 1800,
+  "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJhMmE4MzVmYy1lY2UxLTRkMzctYWI0ZC1iZjE2NWIyYTE3M2QifQ.eyJleHAiOjE2OTYwNDYzNDksImlhdCI6MTY5NjA0NDU0OSwianRpIjoiYTRjMzNjODQtMmViZC00NTkxLWE5YzQtNmYwYWRiZmQ0MDAyIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9tYXN0ZXIiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL21hc3RlciIsInN1YiI6ImNhMjQ3YTVlLTU1ZTMtNDlmNi04ODZmLWFmYjMzODExNjcwMSIsInR5cCI6IlJlZnJlc2giLCJhenAiOiJleG8iLCJzZXNzaW9uX3N0YXRlIjoiMGFhYWI5OGEtMzM5YS00YWQ2LTkwMDEtN2UxZjNmZTJiODU5Iiwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiMGFhYWI5OGEtMzM5YS00YWQ2LTkwMDEtN2UxZjNmZTJiODU5In0.hcWV7kE5GDqQIDqjIBrQUziGEIwSgR_NP0Cbd8RHyKg",
+  "token_type": "Bearer",
+  "not-before-policy": 0,
+  "session_state": "0aaab98a-339a-4ad6-9001-7e1f3fe2b859",
+  "scope": "profile email"
+}
+
+```
